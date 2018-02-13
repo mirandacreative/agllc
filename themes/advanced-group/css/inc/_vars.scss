@@ -1,0 +1,84 @@
+// Project mixins
+
+@mixin align-middle {
+	@include transform(translate(-50%, -50%));
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+@mixin vert-align{
+    font-size: 0;
+    &:before{
+        content: '';
+        height: 100%;
+        width: 0;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    >*{
+        vertical-align: middle;
+        display: inline-block;
+    }
+}
+
+@mixin justify-elems{
+	text-align: justify;
+	> * {
+		float: none;
+		display: inline-block;
+	}
+	&:after{
+		content: '';
+		display: inline-block;
+		width: 100%;
+		height: 0;
+		line-height: 0;
+	}
+}
+
+@mixin list-unstyled{
+	margin: 0;
+	list-style: none;
+	padding: 0;
+}
+
+//declare variables below
+$container-width: 1230px;
+
+$default: #e7e7e7;
+
+$blue: #1a608b;
+
+$text_color: #333;
+
+$main_color: $blue;
+
+$green: #1b5f4c;
+
+$sand: #e7ce8e;
+
+$camel: #cb9f40;
+
+$rouge: #b61b23;
+
+$red-brown: #761212;
+
+$slate-grey: #58595b;
+
+$dark-slate-blue: #1e335a;
+
+$black: #0f0f0f;
+
+$black-87: rgba($black, 0.87);
+$black-54: rgba($black, 0.54);
+
+$white: #fff;
+
+$grey: #9b9b9b;
+
+$pale-grey: #f1eff0;
+
+$font: 'Roboto', sans-serif;
+$header-font: 'Roboto Slab', serif;
+// $subheader-font: 'Roboto', sans-serif;
